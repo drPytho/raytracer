@@ -7,7 +7,7 @@ CC = g++
 
 #COMPILER_FLAGS specifies the additional compilation options we're using
 # -w suppresses all warnings
-COMPILER_FLAGS = -w -Wall -Wextra --std=c++1z
+COMPILER_FLAGS = -w -g -Wall -Wextra --std=c++1z
 
 #LINKER_FLAGS specifies the libraries we're linking against
 LINKER_FLAGS = -lSDL2

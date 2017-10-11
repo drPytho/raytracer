@@ -38,5 +38,12 @@ Window::~Window() {
 
 void Window::drawRectToScreen(Rect r, Color c) {
     SDL_FillRect(screen, &r, SDL_MapRGB(screen->format, c.red, c.green, c.blue));
+}
+
+void Window::updateWindow() {
     SDL_UpdateWindowSurface(window);
+}
+
+void Window::saveToFile(const std::string& file) {
+    SDL_SaveBMP(screen, file.c_str());
 }

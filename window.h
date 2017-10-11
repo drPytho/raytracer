@@ -21,6 +21,8 @@ public:
     Window(const int width, const int height, const std::string& title);
     ~Window();
     void drawRectToScreen(Rect r, Color c);
+    void updateWindow();
+    void saveToFile(const std::string& file);
 };
 
 #endif
