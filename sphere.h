@@ -10,15 +10,15 @@ using namespace linalg::aliases;
 
 class Sphere : public Geometry {
 private:
-    double3 center;
+    vec center;
     double diameter;
 
 public:
 
-    Sphere(Color color, double reflect, double3 center, double diameter):
+    Sphere(Color color, double reflect, vec center, double diameter):
         Geometry(color, reflect), center(center), diameter(diameter) {}
 
-    virtual double3 getNormalAt(const double3& point) const override {
+    virtual vec getNormalAt(const vec& point) const override {
         return linalg::normalize(point - center);
     }
 
@@ -49,7 +49,7 @@ public:
         return a - sqrt(b);
     }
 
-    virtual Color getColorAt(const double3& point) const override {
+    virtual Color getColorAt(const vec& point) const override {
         return color;
     }
 };

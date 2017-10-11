@@ -2,6 +2,7 @@
 #define COLOR_H_
 
 #include <cmath>
+#include "util.h"
 
 struct Color {
     int red;
@@ -10,9 +11,9 @@ struct Color {
     // Add some nice functionality to this later on.
 
     Color(int r, int g, int b) {
-        red = clamp(r);
-        green = clamp(g);
-        blue = clamp(b);
+        red = clamp(0, 255, r);
+        green = clamp(0, 255, g);
+        blue = clamp(0, 255, b);
     }
 
 
@@ -37,11 +38,6 @@ struct Color {
     Color tint(double scale) const {
         const Color c{0xFF, 0xFF, 0xFF};
         return *this + (c-*this)*scale;
-    }
-
-private:
-    int clamp(int in) {
-        return std::max(0, std::min(in, 255));
     }
 };
 

@@ -2,6 +2,7 @@
 #define GEOMETRY_H_
 
 #include <string>
+#include "util.h"
 #include "linalg/linalg.h"
 #include "ray.h"
 #include "color.h"
@@ -34,10 +35,10 @@ public:
 
     virtual double exitDistance(const Ray&) const { return 0.0f; };
     virtual std::string getType() const = 0;
-    virtual double3 getNormalAt(const double3& point) const = 0;
+    virtual vec getNormalAt(const vec& point) const = 0;
     virtual bool intersectsWithRay(const Ray& ray) const = 0;
     virtual double intersectDistance(const Ray& ray) const = 0;
-    virtual Color getColorAt(const double3& point) const = 0;
+    virtual Color getColorAt(const vec& point) const = 0;
 };
 
 #endif

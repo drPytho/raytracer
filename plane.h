@@ -1,6 +1,7 @@
 #ifndef PLANE_H_
 #define PLANE_H_
 
+#include "util.h"
 #include "linalg/linalg.h"
 #include "ray.h"
 #include "geometry.h"
@@ -9,16 +10,16 @@ using namespace linalg::aliases;
 
 class Plane : public Geometry {
 private:
-    double3 point;
-    double3 normal;
+    vec point;
+    vec normal;
 
 
 public:
 
-    Plane(Color color, double reflect, double3 point, double3 normal):
+    Plane(Color color, double reflect, vec point, vec normal):
         Geometry(color, reflect), point(point), normal(linalg::normalize(normal)) {}
 
-    virtual double3 getNormalAt(const double3& point) const override {
+    virtual vec getNormalAt(const vec& point) const override {
         return normal;
     }
 
@@ -45,7 +46,7 @@ public:
             linalg::dot(ray.direction, normal);
     }
 
-    virtual Color getColorAt(const double3& point) const override {
+    virtual Color getColorAt(const vec& point) const override {
         return color;
     }
 

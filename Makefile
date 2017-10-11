@@ -1,6 +1,6 @@
 
 #OBJS specifies which files to compile as part of the project
-OBJS = main.cc window.cc
+OBJS = main.cc window.cc scene.cc
 
 #CC specifies which compiler we're using
 CC = g++
